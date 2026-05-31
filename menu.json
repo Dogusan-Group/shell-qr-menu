@@ -1,0 +1,93 @@
+[
+  {
+    "kategori_adi": "Soğuk Sandviçler",
+    "kategori_resmi": "soguk_sandvicler.jpg",
+    "urunler": [
+      { "isim": "Shell Snd Uzn Mozzarella Jambon 140G", "fiyat": "230,00 ₺" },
+      { "isim": "Shell Snd Uzn Mozzarella Jambon Triple 210G", "fiyat": "360,00 ₺" },
+      { "isim": "Shell Snd Uzn Kaşarlı 140G", "fiyat": "200,00 ₺" },
+      { "isim": "Shell Snd Uzn Kaşar&Salam Triple 268G", "fiyat": "400,00 ₺" },
+      { "isim": "Shell Snd Uzn Hindi Füme Triple 210GR", "fiyat": "380,00 ₺" },
+      { "isim": "Shell Snd Uzn Hindi Füme 140G", "fiyat": "200,00 ₺" },
+      { "isim": "Shell Snd Susamlı Baton Tavuk Füme Kaşar 165G", "fiyat": "180,00 ₺" },
+      { "isim": "Shell Çiğköfte Dürüm 180G", "fiyat": "140,00 ₺" },
+      { "isim": "Dardanel Yaprak Sarma", "fiyat": "200,00 ₺" }
+    ]
+  },
+  {
+    "kategori_adi": "Sıcak Sandviçler",
+    "kategori_resmi": "sicak_sandvicler.jpg", 
+    "urunler": [
+      { "isim": "Shell Snd Sck Kavurmalı Bazlama 170GR", "fiyat": "400,00 ₺" },
+      { "isim": "Shell Snd Sck Karışık Tost 160G", "fiyat": "220,00 ₺" },
+      { "isim": "Shell Snd Sck Haşhaşlı Üç Peynirli 160G", "fiyat": "230,00 ₺" },
+      { "isim": "Shell Snd Sck Akdeniz Tostu 170G", "fiyat": "250,00 ₺" },
+      { "isim": "Shell Snd Mozarella Jambon Bazlama 175GR", "fiyat": "- ₺" },
+      { "isim": "Shell Snd Ksa Tavuk Terayaki 220G", "fiyat": "340,00 ₺" },
+      { "isim": "Shell Snd Çift Kaşarlı Tost", "fiyat": "200,00 ₺" }
+    ]
+  },
+  {
+    "kategori_adi": "Deli2go Fırın Ürünleri",
+    "kategori_resmi": "firin_urunleri.jpg",
+    "urunler": [
+      { "isim": "Dereotlu Poğaça", "fiyat": "40,00 ₺" },
+      { "isim": "Vişne Lor Çörek 100G", "fiyat": "40,00 ₺" },
+      { "isim": "Vanilyalı Krovasan", "fiyat": "50,00 ₺" },
+      { "isim": "Tereyağlı Krovasan", "fiyat": "50,00 ₺" },
+      { "isim": "Simit Sade", "fiyat": "30,00 ₺" },
+      { "isim": "Peynirli Rulo Börek", "fiyat": "40,00 ₺" },
+      { "isim": "Peynirli Milföy Böreği", "fiyat": "50,00 ₺" },
+      { "isim": "Patatesli Rulo Börek", "fiyat": "40,00 ₺" },
+      { "isim": "Kıymalı Patatesli Rulo Börek", "fiyat": "60,00 ₺" },
+      { "isim": "Kaşarlı Poğaça", "fiyat": "40,00 ₺" },
+      { "isim": "Jelepone Peynirli Biberli Çörek", "fiyat": "55,00 ₺" },
+      { "isim": "Jalapeno Biberli Peynirli", "fiyat": "55,00 ₺" },
+      { "isim": "Ispanaklı Rulo Börek", "fiyat": "40,00 ₺" },
+      { "isim": "Frambuazlı Kremalı Çörek", "fiyat": "45,00 ₺" }
+    ]
+  },
+  {
+    "kategori_adi": "Sıcak İçecekler",
+    "kategori_resmi": "sicak_icecekler.jpg",
+    "urunler": [
+      { "isim": "Espresso", "fiyat": "75,00 ₺" },
+      { "isim": "Latte", "fiyat": "90,00 ₺" },
+      { "isim": "Americano", "fiyat": "90,00 ₺" },
+      { "isim": "Sütlü Americano", "fiyat": "90,00 ₺" },
+      { "isim": "Cappucino", "fiyat": "90,00 ₺" },
+      { "isim": "Caramel Latte", "fiyat": "100,00 ₺" },
+      { "isim": "Caremel Cappucino", "fiyat": "100,00 ₺" },
+      { "isim": "Vanilya Latte", "fiyat": "100,00 ₺" },
+      { "isim": "Vanilya Cappucino", "fiyat": "100,00 ₺" }
+    ]
+  },
+  {
+    "kategori_adi": "Özel Buzlu Kahveler",
+    "kategori_resmi": "buzlu_kahveler.jpg",
+    "urunler": [
+      { "isim": "Iced Latte", "fiyat": "105,00 ₺" },
+      { "isim": "Iced Cappicino", "fiyat": "105,00 ₺" },
+      { "isim": "Iced Americano", "fiyat": "105,00 ₺" },
+      { "isim": "Iced Latte Karamel", "fiyat": "105,00 ₺" },
+      { "isim": "Iced Cappicino Karamel", "fiyat": "105,00 ₺" },
+      { "isim": "Ice Cappicino Fındık", "fiyat": "105,00 ₺" },
+      { "isim": "Iced Cappicino Vanilya", "fiyat": "105,00 ₺" },
+      { "isim": "Ice Latte Vanilya", "fiyat": "105,00 ₺" }
+    ]
+  },
+  {
+    "kategori_adi": "Tatlılar",
+    "kategori_resmi": "tatlilar.jpg",
+    "urunler": [
+      { "isim": "Çilek Aromalı Donut", "fiyat": "60,00 ₺" },
+      { "isim": "Çikolatalı Donut", "fiyat": "60,00 ₺" },
+      { "isim": "Havuçlu Dilim Kek", "fiyat": "100,00 ₺" },
+      { "isim": "Kakaolu Çikolatalı Kurabiye", "fiyat": "100,00 ₺" },
+      { "isim": "Mermer Dilim Kek", "fiyat": "100,00 ₺" },
+      { "isim": "Limonlu Haşhaşlı Kek", "fiyat": "100,00 ₺" },
+      { "isim": "Kakaolu Çikolatalı Kek", "fiyat": "100,00 ₺" },
+      { "isim": "Çikolatalı ve Kakaolu Küp Kek", "fiyat": "100,00 ₺" }
+    ]
+  }
+]
