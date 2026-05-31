@@ -23,7 +23,7 @@ fetch('menu.json')
             // 2. Akordeon Ürün Menüsü (Shell Deli2Go Tasarım Kartları)
             htmlIcerik += `
             <div id="${kartId}" class="category-card ${activeClass}">
-                <div class="category-image-wrapper" style="${!kategori.kategori_resmi ? 'display:none;' : ''}">
+                <div class="category-image-wrapper" onclick="toggleKategori(this)" style="${!kategori.kategori_resmi ? 'display:none;' : ''}">
                     <img class="category-img" src="${resimYolu}" alt="${kategori.kategori_adi}" onerror="this.parentElement.style.display='none';">
                 </div>
                 <div class="category-header" onclick="toggleKategori(this)">
