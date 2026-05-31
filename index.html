@@ -1,70 +1,41 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shell deli2go Menü</title>
+    <title>Şırnak Shell Deli2Go Menü</title>
     <link rel="stylesheet" href="src/style.css">
 </head>
-
 <body>
 
-    <header class="header">
-        <img src="src/shell_logo.svg" alt="Shell Logo" class="header-logo" onerror="this.style.display='none';">
-        <h1>Şırnak Shell deli2go</h1>
-        <p>Her An Taptaze</p>
-    </header>
-
-    <div class="container">
-        <div id="kategori-grid" class="category-grid"></div>
-
-       <div class="contact-section">
-            <div class="contact-support-header">
-                <span class="support-line"></span>
-                <span class="support-text">Destek & Öneri Hattı</span>
-                <span class="support-line"></span>
-            </div>
-            
-            <div class="contact-card">
-                <div class="contact-item">
-                    <div class="icon-circle">
-                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <small>Bizi Arayın</small>
-                        <a href="tel:04862211006">0486 221 10 06</a>
-                    </div>
+    <header class="header hero">
+        <div class="topbar">
+            <div class="brand">
+                <div class="shell">
+                    <img src="src/shell_logo.svg" alt="Shell Logo" style="width:34px; height:34px; object-fit:contain;" onerror="this.style.display='none'; this.parentElement.innerHTML='☀';">
                 </div>
-                
-                <div class="contact-divider"></div>
-                
-                <div class="contact-item">
-                    <div class="icon-circle">
-                        <svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <small>E-Posta Gönder</small>
-                        <a href="mailto:info@dgsnas.com">info@dgsnas.com</a>
-                    </div>
+                <div class="brand-text">
+                    <b>Şırnak Shell Deli2Go</b>
+                    <small>Her An Taptaze</small>
                 </div>
             </div>
         </div>
+    </header>
 
-        <div class="menu-divider">
-            <span></span>
-            <h3>Tüm Ürünler</h3>
-            <span></span>
+    <main class="container">
+        <div id="kategori-grid" class="category-grid"></div>
+
+        <div class="section-head">
+            <h2>Tüm Ürünler</h2>
         </div>
 
         <div id="menu-kapsayici"></div>
-    </div>
+    </main>
 
-    <div class="footer">
+    <footer class="footer">
         Fiyatlarımıza KDV dahildir. Afiyet olsun.
-    </div>
+    </footer>
 
     <script src="src/script.js"></script>
 </body>
-
 </html>

@@ -8,12 +8,11 @@ fetch('menu.json')
         let htmlIcerik = '';
 
         data.forEach((kategori, index) => {
-            // isFirst değişkenini boş bıraktık, böylece başlangıçta hiçbiri 'active' olmayacak
             const activeClass = ''; 
             const resimYolu = kategori.kategori_resmi ? `img/${kategori.kategori_resmi}` : '';
             const kartId = `kategori-kart-${index}`;
 
-            // Grid Kartı oluşturma aynı kalıyor...
+            // 1. Üstteki Grid Kısayolları Kartları
             gridHtml += `
             <div class="grid-item" onclick="scrollToKategori('${kartId}')">
                 <img class="grid-item-img" src="${resimYolu}" alt="${kategori.kategori_adi}" onerror="this.style.display='none';">
@@ -21,11 +20,11 @@ fetch('menu.json')
             </div>
             `;
 
-            // Akordeon Kartı kısmında activeClass değişkenini kullanıyoruz
+            // 2. Akordeon Ürün Menüsü (Shell Deli2Go Tasarım Kartları)
             htmlIcerik += `
             <div id="${kartId}" class="category-card ${activeClass}">
-                <div class="category-image-wrapper">
-                    <img class="category-img" src="${resimYolu}" alt="${kategori.kategori_adi}" onerror="this.style.display='none';">
+                <div class="category-image-wrapper" style="${!kategori.kategori_resmi ? 'display:none;' : ''}">
+                    <img class="category-img" src="${resimYolu}" alt="${kategori.kategori_adi}" onerror="this.parentElement.style.display='none';">
                 </div>
                 <div class="category-header" onclick="toggleKategori(this)">
                     <div class="category-title">${kategori.kategori_adi}</div>
@@ -37,6 +36,7 @@ fetch('menu.json')
                     <div class="category-products">
             `;
 
+            // Ürünler
             kategori.urunler.forEach(urun => {
                 const gosterilecekFiyat = (urun.fiyat && urun.fiyat.trim() !== "") ? urun.fiyat : "- ₺";
                 htmlIcerik += `
@@ -75,29 +75,25 @@ function scrollToKategori(id) {
 
     const icerik = hedefKart.querySelector('.category-content');
 
-    // 1. Üst menüden tıklandığında anında açılması için animasyonu geçici olarak iptal et
     icerik.style.transition = 'none';
 
-    // 2. Kart kapalıysa beklemeden anında aç
     if (!hedefKart.classList.contains('active')) {
         hedefKart.classList.add('active');
         icerik.style.maxHeight = icerik.scrollHeight + "px";
     }
 
-    // 3. Sayfa yüksekliği anında güncellendiği için artık tam hedef noktayı hatasız hesaplayabiliriz
     setTimeout(() => {
-        const headerHeight = document.querySelector('.header').offsetHeight;
+        // Sticky menü olmadığı için direkt hedefe kaydırıyoruz. (Bir miktar boşluk ile)
         const elementPosition = hedefKart.getBoundingClientRect().top + window.scrollY;
-        const offsetPosition = elementPosition - headerHeight - 15; // 15px ekstra boşluk
+        const offsetPosition = elementPosition - 15;
 
         window.scrollTo({
             top: offsetPosition,
-            behavior: "smooth" // Sayfanın aşağı kayması yumuşak olsun
+            behavior: "smooth"
         });
 
-        // 4. Kaydırma işlemi başladıktan sonra, normal manuel tıklamalar için animasyonu geri yükle
         setTimeout(() => {
-            icerik.style.transition = ''; // Boş bırakarak CSS'teki orijinal ayarlara döndürüyoruz
+            icerik.style.transition = ''; 
         }, 300);
     }, 10);
 }
