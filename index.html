@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +13,8 @@
             --text-dark: #2d2d2d;
             --text-muted: #666666;
             --card-bg: #ffffff;
-            --shadow-sm: 0 4px 12px rgba(0,0,0,0.03);
-            --shadow-md: 0 8px 24px rgba(0,0,0,0.05);
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.05);
         }
 
         * {
@@ -73,7 +74,7 @@
             margin-bottom: 16px;
             box-shadow: var(--shadow-md);
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.02);
+            border: 1px solid rgba(0, 0, 0, 0.02);
         }
 
         /* Kategori Resmi Bölümü */
@@ -81,7 +82,8 @@
             width: 100%;
             height: 140px;
             position: relative;
-            background-color: #eae6e1; /* Resim yüklenene kadar modern gri alan */
+            background-color: #eae6e1;
+            /* Resim yüklenene kadar modern gri alan */
             overflow: hidden;
         }
 
@@ -93,7 +95,8 @@
         }
 
         /* Resim yüklenemezse şık görünmesi için */
-        .category-img:not([src]), .category-img[src=""] {
+        .category-img:not([src]),
+        .category-img[src=""] {
             opacity: 0;
         }
 
@@ -138,7 +141,7 @@
             overflow: hidden;
             transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             background-color: #fafbfc;
-            border-top: 0 solid rgba(0,0,0,0.03);
+            border-top: 0 solid rgba(0, 0, 0, 0.03);
         }
 
         .category-products {
@@ -150,12 +153,15 @@
             transform: rotate(180deg);
             background: #fff0f0;
         }
+
         .category-card.active .toggle-icon svg {
             fill: var(--soft-red);
         }
+
         .category-card.active .category-content {
             border-top-width: 1px;
         }
+
         .category-card.active .category-img {
             transform: scale(1.03);
         }
@@ -163,7 +169,7 @@
         /* Modern Ürün Satırları */
         .menu-item {
             display: flex;
-            justify-binformation: space-between;
+            justify-content: space-between;
             align-items: center;
             padding: 14px 0;
             border-bottom: 1px solid rgba(0, 0, 0, 0.04);
@@ -177,14 +183,17 @@
             font-size: 15px;
             font-weight: 500;
             color: #3a3a3a;
-            padding-right: 15px;
+            padding-right: 10px;
+            flex: 1;
         }
 
         .item-price {
             font-size: 15px;
-            font-weight: 600;
-            color: var(--text-dark);
+            font-weight: 700;
+            color: var(--soft-red);
             white-space: nowrap;
+            text-align: right;
+            min-width: 80px;
         }
 
         .footer {
@@ -196,6 +205,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <header class="header">
@@ -204,7 +214,7 @@
     </header>
 
     <div id="menu-kapsayici" class="container">
-        </div>
+    </div>
 
     <div class="footer">
         Fiyatlarımıza KDV dahildir. Afiyet olsun.
@@ -218,72 +228,56 @@
                 let htmlIcerik = '';
 
                 data.forEach((kategori, index) => {
-                    // İlk kategorinin varsayılan olarak açık gelmesi için 'active' sınıfı eklenebilir
-                    // İsterseniz hepsini kapalı başlatmak için aşağıdaki sınıftan 'active' kaldırabilirsiniz.
                     const isFirst = index === 0 ? 'active' : '';
+                    // GitHub Pages img klasörü yolu
+                    const resimYolu = kategori.kategori_resmi ? `img/${kategori.kategori_resmi}` : '';
 
                     htmlIcerik += `
-                        <div class="category-card ${isFirst}">
-                            <div class="category-image-wrapper">
-                                <img class="category-img" src="${('img/' + kategori.kategori_resmi) || ''}" alt="${kategori.kategori_adi}" onerror="this.style.opacity='0';">
-                            </div>
-                            <div class="category-header" onclick="toggleKategori(this)">
-                                <div class="category-title">${kategori.kategori_adi}</div>
-                                <div class="toggle-icon">
-                                    <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
-                                </div>
-                            </div>
-                            <div class="category-content">
-                                <div class="category-products">
-                    `;
-                    
-                    kategori.urunler.forEach(urun => {
-                        htmlIcerik += `
-                            <div class="menu-item">
-                                <div class="item-name">${urun.isim}</div>
-                                <div class="item-price">${urun.fiyat}</div>
-                            </div>
-                        `;
-                    });
-
-                    htmlIcerik += `
-                                </div>
+                    <div class="category-card ${isFirst}">
+                        <div class="category-image-wrapper">
+                            <img class="category-img" src="${resimYolu}" alt="${kategori.kategori_adi}" onerror="this.style.opacity='0';">
+                        </div>
+                        <div class="category-header" onclick="toggleKategori(this)">
+                            <div class="category-title">${kategori.kategori_adi}</div>
+                            <div class="toggle-icon">
+                                <svg viewBox="0 0 24 24"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/></svg>
                             </div>
                         </div>
-                    `;
-                });
+                        <div class="category-content">
+                            <div class="category-products">
+                `;
 
+                    kategori.urunler.forEach(urun => {
+                        // Eğer fiyat boşsa (Örn: Bazlama ürününde) tire gösterir [cite: 3, 5]
+                        const gosterilecekFiyat = (urun.fiyat && urun.fiyat.trim() !== "") ? urun.fiyat : "- ₺";
+
+                        htmlIcerik += `
+                        <div class="menu-item">
+                            <div class="item-name">${urun.isim}</div>
+                            <div class="item-price">${gosterilecekFiyat}</div>
+                        </div>
+                    `;
+                    });
+
+                    htmlIcerik += `</div></div></div>`;
+                });
                 kapsayici.innerHTML = htmlIcerik;
-                
-                // Sayfa ilk yüklendiğinde varsayılan açık olan akordeonun boyunu ayarla
                 ayarlaAcikAkordeonlar();
             })
-            .catch(hata => {
-                console.error("Menü yüklenirken hata:", hata);
-                document.getElementById('menu-kapsayici').innerHTML = '<p style="text-align:center; margin-top:20px; color:red; font-size:14px;">Menü verileri yüklenemedi. Lütfen dosyaları bir web sunucusu (Live Server vb.) aracılığıyla açtığınızdan emin olun.</p>';
-            });
+            .catch(hata => console.error("Hata:", hata));
 
-        // Açma / Kapama Fonksiyonu
         function toggleKategori(element) {
             const kart = element.parentElement;
             const icerik = kart.querySelector('.category-content');
-            
             if (kart.classList.contains('active')) {
                 icerik.style.maxHeight = null;
                 kart.classList.remove('active');
             } else {
-                // Opsiyonel: Aynı anda sadece bir menünün açık kalmasını istiyorsanız alttaki 3 satırı aktif edin:
-                // document.querySelectorAll('.category-card.active').forEach(a => {
-                //     a.querySelector('.category-content').style.maxHeight = null;
-                //     a.classList.remove('active');
-                // });
-
                 kart.classList.add('active');
                 icerik.style.maxHeight = icerik.scrollHeight + "px";
             }
         }
 
-        // İlk başta aktif olan kartın pürüzsüz animasyon yüksekliğini hesaplayan yardımcı fonksiyon
         function ayarlaAcikAkordeonlar() {
             setTimeout(() => {
                 document.querySelectorAll('.category-card.active').forEach(kart => {
@@ -294,4 +288,5 @@
         }
     </script>
 </body>
+
 </html>
